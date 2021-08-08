@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="tela_inicial">Realize seu Login</string>
+    <string name="botaoLogin">Logar!</string>
+    <string name="campoLogin">Digite aqui seu login</string>
+    <string name="campoSenha">Digite aqui a sua senha</string>
+    <string name="loginIncorreto">Login ou Senha incorreta!</string>
+</resources>
