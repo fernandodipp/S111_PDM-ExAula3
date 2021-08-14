@@ -18,12 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         TextView campoLogin= findViewById(R.id.recebe_usuario);
         TextView campoSenha= findViewById(R.id.recebe_senha);
-
-        // aqui estou pegando o parametro enviado pelo meu pai
         campoLogin.setText((String) getIntent().getSerializableExtra("TEXTO_LOGIN"));
         campoSenha.setText((String) getIntent().getSerializableExtra("TEXTO_SENHA"));
-
     }
-
-
 }

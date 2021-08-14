@@ -19,35 +19,32 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
+    EditText campoLogin = findViewById(R.id.editText_Login);
+    EditText campoSenha = findViewById(R.id.editText_Password);
+    String loginDigitado = campoLogin.getText().toString();
+    String senhaDigitada = campoSenha.getText().toString();
+
+    private void startSegundaActivity(){
+        Bundle sacolaParametros = new Bundle();
+        sacolaParametros.putString("TEXTO_LOGIN",loginDigitado);
+        sacolaParametros.putString("TEXTO_SENHA",senhaDigitada);
+        Intent intent = new Intent(this,MainActivity2.class);
+        intent.putExtras(sacolaParametros);
+        startActivity(intent);
+    }
+
     public void abreSegundaActivity(View view) {
-
-        EditText campoLogin = findViewById(R.id.editText_Login);
-        EditText campoSenha = findViewById(R.id.editText_Password);
-        String loginDigitado = campoLogin.getText().toString();
-        String senhaDigitada = campoSenha.getText().toString();
-
         if(loginDigitado.equals("admin") && senhaDigitada.equals("123")){
-            Bundle sacolaParametros = new Bundle();
-            sacolaParametros.putString("TEXTO_LOGIN",loginDigitado);
-            sacolaParametros.putString("TEXTO_SENHA",senhaDigitada);
-            Intent intent = new Intent(this,MainActivity2.class);
-            intent.putExtras(sacolaParametros);
-            startActivity(intent);
+            startSegundaActivity();
         }else{
             Toast toast = Toast.makeText(this, "Login ou Senha incorreta!" , Toast.LENGTH_LONG);
             toast.show();
         }
-
-
-
-
-
     }
 }
